@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: akstom 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akstom
+  template:
+    metadata:
+      labels:
+        app: akstom 
+    spec:
+      containers:
+        - name: akstom 
+          image: tomcontainerregistry.azurecr.io/akstom
+          ports:
+          - containerPort: 80
